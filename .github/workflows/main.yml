@@ -38,5 +38,5 @@ jobs:
       
       - name: Deployment completed
         run: |
-          echo "🚀 Deployment completed successfully!"
+          echo "🚀 Deployment completed successfully"
           echo "Website URL: http://${{ secrets.S3_BUCKET_NAME }}.s3-website-${{ secrets.AWS_REGION }}.amazonaws.com"
