@@ -36,6 +36,10 @@ jobs:
             --index-document index.html \
             --error-document error.html
       
+      - name: Invalidate CloudFront cache (Optional)
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+      
       - name: Deployment completed
         run: |
           echo "🚀 Deployment completed successfully!"
